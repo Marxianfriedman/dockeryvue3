@@ -1,9 +1,6 @@
 services:
   app:
+    image: app-vue  # <--- Aquí especificas tu nombre
     build: .
     ports:
       - "8080:80"
-    restart: unless-stopped
-    volumes:
-      - .:/app
-      - /app/node_modules
