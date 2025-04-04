@@ -1,35 +1,46 @@
-# mi-app
+# mi-app - Vue 3 + Vite con docker
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto combina Vue 3 en Vite con configuracion Docker para el desarrollo y despliegue.
 
-## Recommended IDE Setup
+## Características
+- Vue 3 + Vite
+- Configuracione Docker lista para produccion
+- Configurado en WSL/Kali linux
+- ESLint integrado
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Configuración IED
+Recomendamos usar [VSCode](https://code.visualstudio.com/) con:
+- [Extensión Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (soporte oficial para Vue 3)
+- ⚠️ Deshabilita la extensión Vetur (para Vue 2) para evitar conflictos
 
-## Customize configuration
+## Personalización avanzada 
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+El proyecto usa [Vite](https://vitejs.dev/). Para modificar:
+- Configuración del servidor de desarrollo
+- Rutas de compilación
+- Variables de entorno
 
-## Project Setup
+Consulta la [documentación oficial de Vite](https://vite.dev/config/).
 
-```sh
-npm install
-```
+## Comandos esenciales
 
-### Compile and Hot-Reload for Development
+## Instalación y configuración
+```sh```
+npm install       # Instalar dependencias
+npm run dev      # Desarrollo con hot-reload
 
-```sh
-npm run dev
-```
+## COMPILACION
+```sh```
+npm run build    # Build para producción (optimizado)
+npm run preview  # Previsualizar build de producción localmente
 
-### Compile and Minify for Production
+## Mantenimiento
+```sh```
+npm run list  # Análisis de código con ESLint
+npm run format   # Formateo automático (opcional)
 
-```sh
-npm run build
-```
+## Version Dockerizada
+```sh```
+docker-compose up --build    # Construir y levantar contenedor
+docker-compose down         # Detener contenedor
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
