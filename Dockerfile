@@ -1,5 +1,7 @@
-FROM node:18-alpine  # Imagen de Node.js para desarrollo
-WORKDIR /app  # Carpeta de trabajo dentro del contenedor
+ # Imagen de Node.js para desarrollo
+FROM node:18-alpine 
+ # Carpeta de trabajo dentro del contenedor
+WORKDIR /app 
 
 # Copia package.json y package-lock.json primero (para optimizar caché)
 COPY package*.json ./
