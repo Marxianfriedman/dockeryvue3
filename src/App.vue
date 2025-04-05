@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <h1>{{ titulo }}</h1>
-    <Contador
+    <ComponenteContador
       :inicial="5"
       @incrementado="handleIncremento"
     />
@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import Contador from './components/Contador.vue'
+import ComponenteContador from './components/ComponenteContador.vue'
 import ListaTareas from './components/ListaTareas.vue'
 
 export default {
-  components: { Contador, ListaTareas },
+  components: { ComponenteContador, ListaTareas },
   data() {
     return {
       titulo: 'Mi App Vue Básica',
