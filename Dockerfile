@@ -1,13 +1,15 @@
-# Etapa de construcción
-FROM node:18-alpine AS builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+FROM node:18-alpine  # Imagen de Node.js para desarrollo
+WORKDIR /app  # Carpeta de trabajo dentro del contenedor
 
-# Etapa de producción
-FROM nginx:stable-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Copia package.json y package-lock.json primero (para optimizar caché)
+COPY package*.json ./
+RUN npm install  # Instala dependencias
+
+# Copia el resto del código
+COPY . .
+
+# Expone el puerto donde corre Vite
+EXPOSE 5173
+
+# Comando por defecto: ejecutar Vite
+CMD ["npm", "run", "dev", "--", "--host"]
